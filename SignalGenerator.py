@@ -48,6 +48,20 @@ class SignalGenerator:
         t_mod = self.frequency * self.t
         return self.amplitude * 2 * (t_mod - np.floor(t_mod + 0.5))
 
+
+    def add_offset(self, signal, offset):
+        """
+        Add a constant DC offset to a signal.
+
+        Parameters:
+        - signal: The input signal array
+        - offset: Constant value to add to the signal
+
+        Returns:
+        - The signal with offset added
+        """
+        return signal + offset
+
     def add_noise(self, signal, noise_std):
         """Add Gaussian noise to a signal."""
         noise = np.random.normal(0, noise_std, self.num_samples)
