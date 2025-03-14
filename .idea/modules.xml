@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Test_Kalman_Filter-1.iml" filepath="$PROJECT_DIR$/.idea/Test_Kalman_Filter-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Test_Lineal_Kalman_Filter.iml" filepath="$PROJECT_DIR$/.idea/Test_Lineal_Kalman_Filter.iml" />
     </modules>
   </component>
 </project>
