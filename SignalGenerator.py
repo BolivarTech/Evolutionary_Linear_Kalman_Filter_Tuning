@@ -26,6 +26,11 @@ class SignalGenerator:
         self.t = np.arange(0, self.duration, 1/self.sampling_rate)
         self.num_samples = len(self.t)
 
+
+    def get_time(self):
+        """Return the time vector."""
+        return self.t
+
     def sine_wave(self):
         """Generate a sine wave signal."""
         return self.amplitude * np.sin(2 * np.pi * self.frequency * self.t)
