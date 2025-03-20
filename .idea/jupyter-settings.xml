@@ -6,7 +6,6 @@
         <entry key="$PROJECT_DIR$/.idea/Test_Lineal_Kalman_Filter.iml">
           <value>
             <JupyterConnectionParameters>
-              <option name="argv" value="-m scoop notebook --no-browser" />
               <option name="managed" value="true" />
               <option name="sdkName" value="" />
             </JupyterConnectionParameters>
