@@ -13,14 +13,15 @@ A evolutionary algorithm option is available to find the optimal parameters for 
 - `KalmanFilter.py`: Contains the implementation of the Kalman Filter.
 - `SignalGenerator.py`: Contains the implementation of the Signal Generator.
 - `Kalman_Filter.ipynb`: Jupyter notebook demonstrating the usage of the Kalman Filter and the grid search for optimal parameters.
+- `Evolutive_Optimizator.ipynb`: Jupyter notebook demonstrating the usage of the genetic algorithm to find the optimal parameters for the Kalman Filter.
 
 ## Requirements
 
 - Python 3.x
 - NumPy
 - Matplotlib
+- DEAP (for genetic algorithm)
 - tqdm (optional, for progress bar)
-- DEAP (optional, for genetic algorithm)
 - Jupyter Notebook (for running the notebook)
 
 ## Installation
@@ -33,7 +34,7 @@ A evolutionary algorithm option is available to find the optimal parameters for 
 
 2. Install the required packages:
     ```sh
-    pip install numpy matplotlib tqdm
+    pip install -r `requirements.txt`
     ```
 
 ## Usage
@@ -69,6 +70,8 @@ import matplotlib.pyplot as plt
 SigGen = SignalGenerator(frequency=480, sampling_rate=20000, duration=0.1)
 true_signal = SigGen.generate_signal('square')
 noisy_signal = SigGen.add_noise(true_signal, noise_std=1)
+# Get time vector
+time= SigGen.get_time()
 
 # Initialize Kalman filter
 F = np.array([[1]])
@@ -82,8 +85,5 @@ kf = KalmanFilter(F, H, Q, R, P, x)
 filtered_signal = kf.filter(noisy_signal)
 
 # Plot results
-plt.plot(true_signal, label='True Signal')
-plt.plot(noisy_signal, label='Noisy Signal')
-plt.plot(filtered_signal, label='Filtered Signal')
-plt.legend()
-plt.show()
+kf.plot_results(noisy_signal, true_signal, filtered_signal, time)
+```
