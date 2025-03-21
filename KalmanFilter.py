@@ -44,21 +44,18 @@ class KalmanFilter:
 
     def filter(self, measurements):
         """Apply Kalman filter to a sequence of measurements."""
-        filtered_values = []
-        for z in measurements:
-            filtered_values.append(self.filter_step(z))
-        return filtered_values
+        return [self.filter_step(z) for z in measurements]
 
     def calculate_error(self, true_signal, filtered_signal):
         """Calculate error metrics between true and filtered signals."""
-        mse = np.mean((true_signal - filtered_signal) ** 2)
-        rmse = np.sqrt(mse)
+        mse = np.mean((true_signal - filtered_signal) ** 2)  #Mean Squared Error
+        rmse = np.sqrt(mse)  #Root Mean Square Error
         return mse, rmse
 
     def plot_results(self, input_signal, true_signal, filtered_signal):
         """Plot the original, noisy, and filtered signals."""
-        plt.plot(input_signal, label='Señal con ruido')
-        plt.plot(true_signal, label='Señal original')
-        plt.plot(filtered_signal, label='Señal filtrada')
+        plt.plot(input_signal, label='Noisy Signal')
+        plt.plot(true_signal, label='Original Signal')
+        plt.plot(filtered_signal, label='Filtered Signal')
         plt.legend()
         plt.show()
