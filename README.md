@@ -2,6 +2,12 @@
 
 This project demonstrates the use of a Kalman Filter to process and filter noisy signals. The project includes a synthetic signal generator, noise addition, and a Kalman Filter implementation. Additionally, it performs a grid search to find the optimal parameters for the Kalman Filter.
 
+A evolutionary algorithm option is available to find the optimal parameters for the Kalman Filter. The algorithm is based on a genetic algorithm that evolves a population of Kalman Filter parameters to minimize the error between the filtered signal and the true signal.
+
+## References
+
+- The genetic algorithm implementation is based on the DEAP library: https://deap.readthedocs.io/en/master/
+
 ## Project Structure
 
 - `KalmanFilter.py`: Contains the implementation of the Kalman Filter.
@@ -14,6 +20,8 @@ This project demonstrates the use of a Kalman Filter to process and filter noisy
 - NumPy
 - Matplotlib
 - tqdm (optional, for progress bar)
+- DEAP (optional, for genetic algorithm)
+- Jupyter Notebook (for running the notebook)
 
 ## Installation
 
@@ -37,6 +45,14 @@ This project demonstrates the use of a Kalman Filter to process and filter noisy
     - Add noise to the signal.
     - Apply the Kalman Filter to the noisy signal.
     - Perform a grid search to find the optimal Q and R parameters for the Kalman Filter.
+    - Plot the results and visualize the filtered signal.
+
+3. To use the evolutionary algorithm to find the optimal parameters for the Kalman Filter, run the Jupyter notebook `Evolutive_Optimizator.ipynb`.
+4. The notebook includes the following steps:
+    - Generate a synthetic signal.
+    - Add noise to the signal.
+    - Apply the Kalman Filter to the noisy signal.
+    - Use the genetic algorithm to find the optimal Q and R parameters for the Kalman Filter.
     - Plot the results and visualize the filtered signal.
 
 ## Example
