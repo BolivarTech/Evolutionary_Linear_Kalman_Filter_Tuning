@@ -3,3 +3,4 @@ matplotlib>=3.10.1
 tqdm>=4.67.1
 deap>=1.4.2
 scoop>=0.7.2
+tabulate2>=1.10.0
